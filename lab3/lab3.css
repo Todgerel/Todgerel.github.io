@@ -1,0 +1,125 @@
+@media screen and (min-width: 600px){
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 80% 80% 1fr;
+        gap: 0px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .column1{
+        color: black;
+        background-color: grey;
+        font-size: 12pt;
+        text-align: left;
+        padding: 10px;    
+        grid-column: 1 / 4;
+        grid-row: 3 / 5;        
+    }
+    .column2{
+        color: black;
+        background-color: rgb(170, 166, 166);
+        font-size: 12pt;
+        text-align: center;    
+        padding: 10px;    
+        grid-column: 4 / 10;
+        grid-row: 3 / 5;
+    }
+    .column3{
+        color: black;
+        background-color: rgb(215, 212, 212);
+        font-size: 12pt;
+        text-align: right;    
+        padding: 10px;   
+        grid-column: 10 / 13; 
+        grid-row: 3 / 5;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 80% 80% 1fr;
+        gap: 0px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .column1{
+        color: black;
+        background-color: grey;
+        font-size: 12pt;
+        text-align: left;
+        padding: 10px;    
+        grid-column: 1 / 5;
+        grid-row: 3 / 4;        
+    }
+    .column2{
+        color: black;
+        background-color: rgb(170, 166, 166);
+        font-size: 12pt;
+        text-align: center;    
+        padding: 10px;    
+        grid-column: 1 / 13;
+        grid-row: 4 / 5;
+    }
+    .column3{
+        color: black;
+        background-color: rgb(215, 212, 212);
+        font-size: 12pt;
+        text-align: right;    
+        padding: 10px;   
+        grid-column: 5 / 13; 
+        grid-row: 3 / 4;
+    }
+}
+
+.header{
+    grid-column: 1 / 13;
+    border: 1px black solid;
+    background-color: rgb(127, 202, 255);
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    font-size: 16pt; 
+    padding: 10px;     
+}
+
+.menu{
+    background-color: rgb(65, 97, 65);
+    color: white;  
+    border-right: 1px black solid;    
+    text-align: center;
+    padding: 10px;
+}
+
+#menuOther{
+    background-color: rgb(65, 97, 65);
+    color: white;
+    grid-column: 4 / 13;
+}
+
+
+
+.footer{
+    grid-column: 1 / 13;
+    border: 1px black solid;
+    background-color: rgb(65, 97, 65);
+    font-size: 12pt;
+    color: white;
+    text-align: center;
+    height: 20px;    
+    padding: 10px;    
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 80% 80% 1fr;
+    gap: 0px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
