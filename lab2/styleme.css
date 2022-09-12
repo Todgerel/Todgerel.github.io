@@ -29,3 +29,8 @@ p::first-letter {
     color: rgb(162, 0, 255);
     font-weight: bold;
   }
+
+  ol {
+    display: flex;
+    flex-direction: column-reverse;
+  }
