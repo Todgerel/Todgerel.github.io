@@ -10,6 +10,13 @@ window.onload = () => {
 
 
 function onClickSubmit() {
+
+    let checked = document.getElementById("check1").checked;
+
+    if(!checked){
+        return;
+    }
+
     let regexp1 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{10,}$/;
     let passTxt = document.getElementById("password").value;
     if (!regexp1.test(passTxt)) {
@@ -22,6 +29,5 @@ function onClickSubmit() {
     if (!regexp2.test(webURL)) {
         alert('Please enter a URL.');
     }
-    
 
 }
