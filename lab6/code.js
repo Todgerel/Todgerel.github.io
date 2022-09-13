@@ -29,5 +29,4 @@ function onClickSubmit() {
     if (!regexp2.test(webURL)) {
         alert('Please enter a URL.');
     }
-
 }
