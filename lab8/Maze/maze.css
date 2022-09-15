@@ -58,6 +58,7 @@ Hack hack hack; these are CSS "sibling selectors" for selecting
 neighboring elements.  Necessary to avoid giving ids to the boundary divs
 */
 
+/* b0 */
 #maze div.boundary {
     position: absolute;
 
@@ -68,6 +69,7 @@ neighboring elements.  Necessary to avoid giving ids to the boundary divs
     z-index: 1;
 }
 
+/* b1*/
 #maze div.boundary + div.boundary {
     border-left: none;
     border-right: none;
@@ -78,6 +80,7 @@ neighboring elements.  Necessary to avoid giving ids to the boundary divs
     width: 198px;
 }
 
+/* b2 */
 #maze div.boundary + div.boundary + div.boundary {
     border-left: 1px black solid;
     border-right: 1px black solid;
@@ -88,6 +91,7 @@ neighboring elements.  Necessary to avoid giving ids to the boundary divs
     width: 150px;
 }
 
+/* b3 */
 #maze div.boundary + div.boundary + div.boundary + div.boundary {
     border: 1px black solid;
 
@@ -97,6 +101,7 @@ neighboring elements.  Necessary to avoid giving ids to the boundary divs
     width: 498px;
 }
 
+/* b4 */
 #maze div.boundary + div.boundary + div.boundary + div.boundary + div.boundary {
     border-bottom: none;
 
