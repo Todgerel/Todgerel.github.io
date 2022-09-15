@@ -43,7 +43,6 @@ function xFunc() {
         // Scope C
     }
 };
-
 // a. No
 // b. Yes
 // c. No
@@ -58,7 +57,6 @@ function myFunction() {
 console.log(myFunction());
 x = 5;
 console.log(myFunction());
-
 //81
 //25
 
@@ -71,6 +69,4 @@ function bar() {
     //alert(foo);
 }
 bar();
-
-
 //10
