@@ -69,4 +69,5 @@ function bar() {
     //alert(foo);
 }
 bar();
+
 //10

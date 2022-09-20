@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "file:///Users/todko/Desktop/WAP/Lab/Todgerel.github.io/lab6/index.html",
+            "url": "file:///Users/todko/Desktop/WAP/Lab/Todgerel.github.io/lab10/index.html",
             "webRoot": "${workspaceFolder}"
         }
     ]
