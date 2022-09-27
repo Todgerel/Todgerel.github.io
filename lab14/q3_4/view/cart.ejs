@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">  
-  <title>Home</title>
-  <link rel="stylesheet" type="text/css" href="css" />
-</head>
-<body>
-  <h1>Products in cart</h1>  
-  <a class="button" href="/addProduct">+ Add a product to cart</a>
-  <div>
-    <table id="table-list">
-      <thead>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Description</th>        
-      </thead>
-      <% for (var i = 0; i < products.length; i++) { %>        
-        <tr class="item">
-          <td><%= products[i].name %></td>
-          <td><%= products[i].price %></td>
-          <td><%= products[i].desc %></td>
-        </tr> 
-      <% } %>
-    </table>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Electronic Store</title>
+    <link rel="stylesheet"  href="./css/style.css">
+  </head>
+  <body>
+
+    <div id="container">
+        
+        <%- include ('header.ejs') %>
+        <%- include ('menu.ejs') %>
+
+        <div id="body">
+            <% for(let i of items){%>
+              <div id="lis">
+                <div id="cit">
+                  <img src=<%=i.pic%>>
+                  <h2><%=i.name%></h2>
+                  <p ><%=i.price%>$</p>
+                </div>
+              </div>
+            <%}%>
+            <h2>
+              <%let sum = 0;%>
+              <%for(let i of items){%>
+                <% sum+=i.price%>                 
+             <%}%>
+             Total:<%= sum%>$
+            </h2>
+        </div>
+
+        <%- include ('footer.ejs') %>
+    </div>
+	
+  </body>
 </html>

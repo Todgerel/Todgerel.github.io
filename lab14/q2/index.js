@@ -1,34 +1,44 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const bodyparser = require('body-parser');
+const session = require('express-session');
 
-app.use(bodyparser.urlencoded());
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, "view"));
+app.use(session({
+        secret: 'salt for cookie signing'
+}));
 
-app.use('/result', (req, res, next) => {
-    console.log('In middleware /result');
-    console.log(req.body); // { title: 'book' } res.redirect('/');
+const date = new Date();
+const hour = date.getHours();
 
+const bodyParser = require('body-parser');
+const { truncateSync } = require('fs');
+app.use(bodyParser.urlencoded());
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'html', 'index.html'));
+});
+
+app.post('/result', (req, res) => {
     let name = req.body.name;
     let age = req.body.age;
 
-    //res.send(`Welcome ${name} with age ${age}`);
-    res.render("result", {
-        p1: name,
-        p2: age
-    })
+    req.session.name = name;
+    req.session.age = age;
+
+    res.redirect('/output');
+    //res.redirect(`/output?name=${name}&age=${age}`);
 });
 
-app.use('/', (req, res, next) => {
-    console.log('In middleware q2');
-    let date = new Date();
-    res.render("index",
-        {
-            label1: "Name",
-            label2: "Age"
-        });
+app.get('/output', (req, res) => {
+    console.log(req.session.name);
+    console.log(req.session.age);
+    
+    let name = req.session.name; //req.query.name;
+    let age = req.session.age; //req.query.age;
+
+    res.send(`Welcome ${name} with age ${age}`);
 });
+
+app.use('/css', express.static(path.join(__dirname, 'css', (hour > 6 && hour < 18) ? 'day.css':'night.css')));
 
 app.listen(3000);
