@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const bodyparser = require('body-parser');
+const router = require('../q3_4/routes/router');
 
 app.use(bodyparser.urlencoded());
 app.set('view engine', 'ejs');
@@ -12,17 +13,6 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get("/", (req, res) => {
-    console.log("In the /!");
-    res.render(
-        "product",
-        {
-            valName: "Macbook pro 14",
-            valPrice: "999",
-            valDesc: "Macbook pro 14 inch screen laptop",
-            valID: "14GED2421FGF"
-        }
-    )
-});
+app.use(router);
 
-app.listen(2500);
+app.listen(3000);
